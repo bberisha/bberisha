@@ -1,0 +1,216 @@
+Hi, everybody.
+In this lesson, I'm going to introduce to you
+the Azure Migrate service.
+So we'll get started with a basic introduction
+of what Azure Migrate is and what purpose it serves.
+We'll have a chat about some of the key features,
+and then I want to jump into the Azure portal
+and actually show you how the Azure Migrate service works.
+So first things first, what is Azure Migrate?
+Well, Azure Migrate is this centralized management
+interface, if you like, that provides many different tools
+to support the migration of various different workloads.
+So we can migrate data, applications, servers,
+and this is actually a list that continues to expand.
+Now, when we use the Azure Migrate service,
+one of the first tools that we want to use
+is something referred to as an assessment tool.
+This is where we're taking a look at the thing
+that we want to migrate and learning more
+important information about that thing,
+about that workload, with respect to the migration.
+So if we were migrating a database, well,
+is it going to be compatible with the service in Azure
+that we're migrating to?
+If we're migrating a server, are there going to be
+any issues? What's the cost going to be?
+These are the types of things we look at
+with the assessment tools.
+Next, you have the more obvious types of tools
+that we can use within the Azure Migrate service,
+and these are the migration tools.
+This, of course, is to help us migrate the given workload
+from a source environment into Azure.
+Now, whether we're using the assessment or migration tools,
+you're actually going to see that there's support
+for third-party solutions, as well as support
+for Microsoft-integrated solutions, as well.
+So within the Azure Migrate service,
+there are a number of key features that we're talking about:
+server migrations, database migrations,
+data migrations, and web application migrations.
+So you can see the Azure Migrate service
+is really quite powerful and versatile.
+It helps us to migrate a range of different workloads
+from on-premises or other cloud environments into Azure.
+Really, Microsoft has gone about providing a range
+of different tools to help simplify the migration for you.
+For server desktops, we might be talking about
+virtual machines, physical servers, we may even be
+looking at virtual desktop infrastructure.
+For database migrations, that can be on-premises SQL
+servers, maybe migrating across to Azure SQL,
+and for things like data migrations,
+you might be looking at importing a range of massive amounts
+of data from on-premises across to Azure
+using physical hardware.
+Last but definitely not least, the web application migration
+service is great at helping look at on-premises,
+.NET and PHP applications, and whether or not you can
+migrate them simply across to the Azure App Service.
+So what we're talking about here is a really powerful
+and really versatile service.
+Now, we are, of course, only going to focus on
+server migrations, but I did just want to make it clear
+that the Azure Migrate service is much more than this.
+And remember, when we're going through the migration
+planning activities, we need to have a think about
+what we're trying to achieve.
+You can perform server migrations,
+like we're going to look at, but maybe you have
+a web application that you want to migrate,
+and maybe rather than doing a lift and shift of your server
+across to Azure, you might be more interested in actually
+re-architecting that service and pulling it across
+from a on-premises server, for example,
+moving it into a Platform as a Service solution,
+like Azure App Service.
+So just bear in mind that we have these options.
+Now, whatever one of these options we're going to do,
+we need to create something referred to
+as a Azure Migrate project.
+So let's jump into the Azure portal
+and see what this all looks like right now.
+Okay, everybody, so here I am within the Azure portal
+and what we want to take a look at
+is the Azure Migrate service.
+Now, understand, if this is the first time you were using
+Azure Migrate, you can click on the Azure Migrate service.
+You might search for Azure Migrate up at the top here
+in the search bar, or you might even go ahead
+and click on the Create A Resource option.
+So if we click Create A Resource and type Azure Migrate,
+you'll see we can get started here, as well.
+Now, if I go ahead and click on Create to create
+an Azure Migrate project, you'll see it takes me
+straightaway into the Azure Migrate service.
+I wanted to quickly demonstrate that the reason for this
+is because I already have something referred to
+as an Azure Migrate project.
+So I'm just going to browse into Servers, and you'll see
+I have this option here to change the migrate project.
+So if I click on Change, and then I go ahead and click on
+the Click Here To Create A New Project,
+this is the experience you're going to see
+if you haven't yet used Azure Migrate.
+So let's walk through this now.
+Let's say I'm getting started creating
+a new Azure Migrate project.
+This is going to be responsible for holding
+all of the important information about assessment
+and migration that we are going to perform
+within the Migrate project itself.
+So this might be important metadata, like,
+have you migrated a server?
+Have you performed a test failover of a server migration?
+What server assessment tools are you using?
+What migration tools are you using?
+So you can pick your resource group,
+I'm going to go ahead and leave that as migrate-rg,
+and I'm going to give my migration project a name.
+Let's just call this migratetest.
+Now I'm going to leave the geography
+for my migrate project as Australia.
+Understand what we're talking about here is the metadata
+associated with the migration activities
+that you're going to perform.
+You could have a migration project in Australia
+but actually migrate servers to India, for example.
+This is just where the metadata is going to be housed.
+If I go ahead and click on Next, you'll see what we're now
+focusing on are the different types of assessment
+and migration tools, like we just spoke about.
+So I might want to use the integrated Microsoft
+server assessment tool. I can go ahead and click on that.
+And then if I go ahead and click on Next,
+I can now choose the migration tool.
+So that might be server migration using
+the Microsoft-integrated option as well.
+I want to go ahead and click on Next and Create,
+it's going to create that project for me
+for housing that important metadata,
+but one thing to take away from what we're looking at
+right now is that we have much more than just
+the Microsoft options.
+So again, it could be Microsoft, Cloudamize, Movere.
+There's a lot of different options you can use,
+and the capabilities and the supported workloads
+that you're going to get are going to differ
+depending on the tool that you actually use.
+We're going to stick with
+the Azure Migrate server assessment
+and the Azure Migrate server migration tool by Microsoft.
+So let's go ahead and click on Next,
+then we can go and click on Add Tools.
+Now, what this is doing is
+this is setting up the migration project for us
+within that migrate resource group.
+So if I go ahead now and click on Home, I just want to
+quickly show you something important about that.
+I'm going to click on Resource Groups, and I'm going to
+navigate into the resource group, migrate-rg.
+This is where I've just created the migrate project.
+Now, you can see I've got some other resources here
+for other activities I've already been performing,
+but if we have a look at the Show Hidden Types,
+you'll see here, we have the migratetest resource
+that we just created.
+This is all we're talking about when we create our project.
+It's a special resource that's hidden,
+it's going to to sit in this resource group,
+and it's where that important metadata is going to be stored
+for the different assessment and migration activities.
+So that's just something to bear in mind
+about the hidden project resource.
+Otherwise, everything we are going to do
+is going to be through the Azure Migrate service.
+So if I navigate into Azure Migrate,
+you'll see on the left-hand side, I can choose all of
+the different workloads that we spoke about a moment ago.
+We're going to have server assessment and migration tools,
+database assessment and migration tools, VDI, web apps,
+and data box for big amounts of data
+from on-premises to Azure.
+But again, just understand, for the migration project,
+we're talking about storing important metadata.
+If you have multiple projects,
+you can click on Change, and you can go ahead
+and change to the different projects here, as well.
+So why might you do this?
+Well, maybe what you want to do is
+you want to have multiple different migration projects.
+You might start with a first group of maybe migrating
+some simple servers, some less important servers from
+on-premises to Azure.
+Maybe then you want to do a second group
+that's going to include more important servers, as well.
+Well, it's really up to you,
+whether you want to have multiple projects for this,
+or if you just want to have the 1.
+Certainly, if you have multiple projects,
+all of the information that's going to be stored here
+is nice and clean, and you can easily change between
+those projects to actually reflect the real-world projects
+that you have underway.
+Well, folks, that's a wrap for this lesson
+on the Azure Migrate service.
+As you can see, it's a very versatile, powerful tool
+that supports a range of different workloads,
+not just servers, but other things like databases
+and web applications, as well.
+When we get started, we first need to have that
+migration project, and that's what's going to house
+the important metadata about the tools that we use
+and the activities that we perform.
+So thanks for your time on this one, folks.
+I'll see you in the next lesson.
