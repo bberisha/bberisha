@@ -1,0 +1,46 @@
+
+
+docker system prune -a
+
+Daily Cleanup
+=============
+
+docker system prune -af --filter "until=$((30*24))h"
+
+Cron it
+=======
+
+cd /etc/cron.daily
+sudo nano docker-prune
+
+#!/bin/bash
+docker system prune -af --filter "until=$((30*24))h"
+
+
+Change permission
+=================
+
+sudo chmod +x /etc/cron.daily/docker-prune
+
+run-parts /etc/cron.daily
+
+
+root@ubuntu1:~# find / -type f -name "kubectl"
+/home/bekber1/kubernetes/rancher/volume/k3s/agent/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/11/fs/usr/local/bin/kubectl
+/home/bekber1/kubernetes/rancher/volume/k3s/agent/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/60/fs/bin/kubectl
+/root/.local/bin/kubectl
+/usr/local/bin/kubectl
+/var/lib/docker/overlay2/8da8056cfb27b28bd0d907f45afe002261a047f8fbbafe30b0c0f85723e33168/merged/usr/local/bin/kubectl
+/var/lib/docker/overlay2/15a2d85d4a8923d04ad587cf0a7cec9fdd32d3f52b2fc61be2f0668e2c1a6a54/merged/usr/local/bin/kubectl
+/var/lib/docker/overlay2/c3143dcdbd54502b03d506a8d7af214c6d839ecc6e729c6027b780c6d5cad853/merged/usr/local/bin/kubectl
+/var/lib/docker/overlay2/04512aded67cfbcfc551c3e7f2a45321c741df263cdf11aa4f823e12a9f54887/merged/usr/local/bin/kubectl
+/var/lib/docker/overlay2/1aec2a5cc1285763b45e0dc0b15bd9200feff6b28533f50c9bf98b30f99e4241/diff/usr/local/bin/kubectl
+/var/lib/docker/overlay2/476daf9b926882110e12b2841a96d9f6cc3667b7eac45d18d839a8d43ac41804/merged/usr/local/bin/kubectl
+/var/lib/docker/overlay2/167d75871cee4a3bdb3bc714c32995942af96d3afe145ce13f96d3603233e1c4/diff/usr/local/bin/kubectl
+/var/lib/docker/overlay2/6786aaebc2fd2dc004317e8b76477c6d31e3d81e2c20301882f0eec870910d03/merged/usr/local/bin/kubectl
+/var/lib/docker/overlay2/1f9f4a35e5fda3bd0dc9f8187370eb8f192638570b46f2aba0921b73131e0df2/diff/usr/bin/kubectl
+/var/lib/docker/overlay2/a8552a18bd556a19214384f8313ccf7792415e46e14bfb7012388d6ef8bc52d0/merged/usr/local/bin/kubectl
+/var/lib/docker/overlay2/a592e9037ef339fa5d519e406d7c6a15ec66fe390beda7fd4b9fcc1e00aaa013/merged/usr/bin/kubectl
+/var/lib/docker/overlay2/239c69393d1a7dbb5f0a34a5d7330216babb832489db75134fb474968e2b1b80/diff/usr/local/bin/kubectl
+/var/lib/docker/overlay2/2aabdeefe7952af7a559f4d69457d0fb7d0c0659824595ab4d8b63cb93c4ad7f/merged/usr/bin/kubectl
+root@ubuntu1:~#
